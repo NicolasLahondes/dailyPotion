@@ -1,0 +1,13 @@
+.bgColor {
+background-color: rgb(255, 255, 255);
+
+}
+
+
+.bgBorder {
+border-radius: 25px;
+}
+
+.borderNone {
+border-style: none !important;
+}

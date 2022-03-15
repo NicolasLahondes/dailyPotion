@@ -1,0 +1,35 @@
+<div class="row col-6 card shadow mx-auto mt-5">
+  <div class="card-body text-center">
+    <button routerLink="/home" class="btn btn-dark mt-2">RETOUR</button>
+    <h1 class="card-title">{{ show?.id }} - {{ show?.name }}</h1>
+    <img src={{show?.photo}} class="card-img-top" style="max-width:1000px; max-height:1500px" />
+    <div class="row">
+      <div class=" col-6 d-flex justify-content-start">
+        <h3>Résumé de la série</h3>
+      </div>
+      <div class=" col-6 d-flex justify-content-end">
+        <h4>Nombre de saisons : {{show?.seasonsNumber}}</h4>
+      </div>
+    </div>
+    <p>{{show?.pitch}}</p>
+    <div class="row">
+      <div class="col-6">
+        <h4>La note de la presse</h4>
+        <p>{{show.review}}</p>
+      </div>
+      <div class="col-6">
+        <h4>Première Diffusion</h4>
+        <p>{{show.releaseDate | date}}</p>
+      </div>
+    </div>
+    <div class="comments mt-5">
+      <h3 class="mb-5">Commentaire</h3>
+      <div class="row" *ngFor="let remark of show.remark; index as i">
+        <p class="col-1">#{{i + 1}}</p>
+        <h5 class="col-3">{{show.remark[i].author}}</h5>
+        <p class="col-6">{{show.remark[i].content}}</p>
+        <p class="col-2">{{show.remark[i].date | date}}</p>
+      </div>
+    </div>
+  </div>
+</div>

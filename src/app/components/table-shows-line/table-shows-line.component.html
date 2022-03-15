@@ -1,0 +1,11 @@
+<td class="borderNone">{{id}}</td>
+<td class="borderNone">{{titleToDown}}</td>
+<td class="borderNone">{{firstRelease | date}}</td>
+
+<td class="borderNone">
+  <button type="button" class="btn btn-warning" [routerLink]="['/show', id]"> Voir</button>
+  <button [routerLink]="['/show', id, 'edit']" class="btn btn-warning text-center ms-2">
+    Editer
+  </button>
+  <button (click)="onClickDeleteShow()" class="btn btn-danger text-center ms-2">X</button>
+</td>

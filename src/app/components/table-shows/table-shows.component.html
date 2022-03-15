@@ -1,0 +1,20 @@
+
+  <div class="container ">
+    <table class="table bgColor bgBorder  ">
+      <thead class="">
+        <tr>
+          <th class="borderNone" >id</th>
+          <th class="borderNone">Name</th>
+          <th class="borderNone">Première Diffusion</th>
+          <th class="borderNone">Interractions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr app-table-shows-line  *ngFor="let show of shows; index as i" [id]="show.id" [titleToDown]="show.name"
+          [seasonsNumber]="show.seasonsNumber" [firstRelease]="show.releaseDate" [synopsis]="show.pitch"
+          [review]="show.review" [photoPath]="show.photo"></tr>
+      </tbody>
+    </table>
+  </div>
+

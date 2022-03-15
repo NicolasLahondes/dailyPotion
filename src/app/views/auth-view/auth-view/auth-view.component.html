@@ -1,0 +1,25 @@
+<div class="row mt-5">
+  <div class="col-6 card shadow mx-auto p-3">
+    <h3 class="text-center">Connexion</h3>
+    <div *ngIf="errMsg" class="alert alert-danger my-2">{{ errMsg }}</div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmitAuthForm()">
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input name="email" id="email" placeholder="Email" type="email" class="form-control" #emailInput="ngModel"
+          [(ngModel)]="email" />
+        <app-errors-form [control]="emailInput" controlLabel="Adresse email"></app-errors-form>
+      </div>
+      <div class="mb-3">
+        <label for="password">Mot de Passe</label>
+        <input name="password" type="password" id="password" class="form-control" placeholder="Mot de passe" required
+          #passwordInput="ngModel" [(ngModel)]="password" />
+        <app-errors-form [control]="passwordInput" controlLabel="Mot de passe"></app-errors-form>
+      </div>
+      <div class="row col-4 mx-auto">
+        <button type="submit" [disabled]="authForm.invalid" class="btn btn-dark btn-lg">
+          Me connecter
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

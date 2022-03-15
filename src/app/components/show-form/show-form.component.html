@@ -1,0 +1,41 @@
+<div class="row col-6 card shadow mx-auto mt-3">
+  <h3 class="text-center mt-3">{{ name }}</h3>
+  <form [formGroup]="showForm" (ngSubmit)="onSubmitShowForm()" class="my-3">
+    <div class="mb-3">
+      <label for="showName">Nom de la Série</label>
+      <input id="showName" formControlName="showName" class="form-control" placeholder="Nom de la série"
+        [(ngModel)]="show.name" />
+      <app-errors-form [control]="this.showForm.controls.showName" controlLabel="'showName'"></app-errors-form>
+    </div>
+
+    <div class="mb-3">
+      <label for="title ">Nombre de Saisons</label>
+      <input id="title" formControlName="title" class="form-control" placeholder="Nombre de saisons"
+        [(ngModel)]="show.seasonsNumber" />
+      <app-errors-form [control]="this.showForm.controls.title" controlLabel="'Titre'"></app-errors-form>
+    </div>
+
+    <div class="mb-3">
+      <label for="pitch ">Description</label>
+      <input id="pitch" formControlName="pitch" class="form-control" placeholder="Résumé" [(ngModel)]="show.pitch" />
+      <app-errors-form [control]="this.showForm.controls.pitch" controlLabel="'pitch'"></app-errors-form>
+    </div>
+
+    <div class="mb-3">
+      <label for="review ">Note de la presse</label>
+      <input id="review" formControlName="review" class="form-control" placeholder="??/??" [(ngModel)]="show.review" />
+      <app-errors-form [control]="this.showForm.controls.review" controlLabel="'review'"></app-errors-form>
+    </div>
+
+    <div class="mb-3">
+      <label for="image ">Image</label>
+      <input id="image" formControlName="image" class="form-control" placeholder="http://monlienimage" [(ngModel)]="show.photo" />
+      <app-errors-form [control]="this.showForm.controls.photo" controlLabel="'image'"></app-errors-form>
+    </div>
+
+    <button type=" submit " class="d-grid col-4 mx-auto btn btn-dark mt-2" [disabled]="showForm.invalid">
+      {{ submitLabel }}
+    </button>
+  </form>
+  <a routerLink="/home" class="text-dark mb-2 ms-2"> Retour</a>
+</div>
